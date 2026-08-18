@@ -28,7 +28,7 @@ export const stats: Stat[] = [
 export const contact: ContactInfo = {
   emails: ["andre.kanhanga1@gmail.com", "a-v-k1@hotmail.com"],
   phones: ["+244 931 453 956", "+244 942 330 282", "+244 951 106 897"],
-  linkedin: "https://linkedin.com/in/andre-vasconcelos-kanhanga",
+  linkedin: "https://www.linkedin.com/in/andré-vasconcelos-kanhanga",
   github: "https://github.com/AndresKanhangaJS",
   location: "Kilamba Kiaxi, Luanda, Angola",
 };
