@@ -1,0 +1,16 @@
+:root {
+  --avk-bg-primary: #080b14;
+  --avk-bg-surface: #0f1624;
+  --avk-bg-muted: #1a2236;
+  --avk-accent-blue: #3b82f6;
+  --avk-accent-cyan: #06b6d4;
+  --avk-accent-angola: #cc0000;
+  --avk-gold: #f59e0b;
+  --avk-text-primary: #f1f5f9;
+  --avk-text-muted: #94a3b8;
+  --avk-green-ok: #10b981;
+
+  --avk-font-display: var(--font-space-grotesk), "Space Grotesk", sans-serif;
+  --avk-font-body: var(--font-inter), "Inter", sans-serif;
+  --avk-font-mono: var(--font-jetbrains-mono), "JetBrains Mono", monospace;
+}

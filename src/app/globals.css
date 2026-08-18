@@ -1,0 +1,71 @@
+@import "tailwindcss";
+@import "../styles/tokens.css";
+@import "../styles/animations.css";
+
+@theme inline {
+  --color-bg-primary: var(--avk-bg-primary);
+  --color-bg-surface: var(--avk-bg-surface);
+  --color-bg-muted: var(--avk-bg-muted);
+  --color-accent-blue: var(--avk-accent-blue);
+  --color-accent-cyan: var(--avk-accent-cyan);
+  --color-accent-angola: var(--avk-accent-angola);
+  --color-gold: var(--avk-gold);
+  --color-text-primary: var(--avk-text-primary);
+  --color-text-muted: var(--avk-text-muted);
+  --color-green-ok: var(--avk-green-ok);
+
+  --font-display: var(--avk-font-display);
+  --font-body: var(--avk-font-body);
+  --font-mono: var(--avk-font-mono);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-bg-muted);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    font-family: var(--font-body);
+  }
+
+  ::selection {
+    background-color: var(--color-accent-blue);
+    color: var(--color-text-primary);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent-cyan);
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, var(--color-bg-muted) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--color-bg-muted) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 100;
+    background: var(--color-accent-blue);
+    color: var(--color-text-primary);
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.5rem;
+  }
+
+  .skip-link:focus {
+    left: 1rem;
+    top: 1rem;
+  }
+}
