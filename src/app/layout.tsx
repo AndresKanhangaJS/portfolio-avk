@@ -25,10 +25,28 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 /**
- * URL público do site. Define NEXT_PUBLIC_APP_URL no ambiente (Vercel) —
- * hoje o domínio .vercel.app, amanhã o domínio próprio, sem tocar no código.
+ * URL público do site, por ordem de prioridade:
+ *   1. NEXT_PUBLIC_APP_URL — define esta quando tiveres domínio próprio;
+ *   2. domínios que a Vercel injecta sozinha no build;
+ *   3. localhost, em desenvolvimento.
+ * Variáveis vazias contam como não definidas (`??` deixava passar "").
  */
-const siteUrl = process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000";
+function resolveSiteUrl(): string {
+  const explicit = process.env.NEXT_PUBLIC_APP_URL?.trim();
+  if (explicit) {
+    return explicit.startsWith("http") ? explicit : `https://${explicit}`;
+  }
+
+  const vercelHost =
+    process.env.VERCEL_PROJECT_PRODUCTION_URL?.trim() || process.env.VERCEL_URL?.trim();
+  if (vercelHost) {
+    return `https://${vercelHost}`;
+  }
+
+  return "http://localhost:3000";
+}
+
+const siteUrl = resolveSiteUrl();
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
