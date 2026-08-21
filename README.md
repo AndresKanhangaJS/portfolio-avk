@@ -1,4 +1,4 @@
-# André Vasconcelos Kanhanga — Portfolio
+# Portfolio de André Vasconcelos Kanhanga
 
 Portfolio profissional em página única (one-page) de André Vasconcelos Kanhanga, Engenheiro de Software Full-Stack em Luanda, Angola.
 
@@ -17,7 +17,7 @@ Portfolio profissional em página única (one-page) de André Vasconcelos Kanhan
 - Node.js 20+
 - npm
 
-> **Nota:** este projecto foi desenvolvido num ambiente WSL (Windows Subsystem for Linux). Se o repositório estiver montado num caminho UNC (`\\wsl.localhost\...`), corre os comandos abaixo a partir de dentro do WSL — o `next build`/`next dev` e os binários nativos (SWC, lightningcss) não funcionam de forma fiável a partir do lado Windows nesse tipo de caminho.
+> **Nota:** este projecto foi desenvolvido num ambiente WSL (Windows Subsystem for Linux). Se o repositório estiver montado num caminho UNC (`\\wsl.localhost\...`), corre os comandos abaixo a partir de dentro do WSL, porque o `next build`/`next dev` e os binários nativos (SWC, lightningcss) não funcionam de forma fiável a partir do lado Windows nesse tipo de caminho.
 
 ## Desenvolvimento local
 
@@ -50,7 +50,7 @@ npm install   # se ainda não tiveres node_modules localmente
 docker compose up -d --build app
 ```
 
-A aplicação fica disponível em `http://localhost:3002` (porta mapeada em `docker-compose.yml` — ajusta-a se entrar em conflito com outro serviço local). O serviço monta o código-fonte e o `node_modules` do host como volumes, com hot-reload activo; a imagem usa `node:20-slim` para ser compatível com os binários nativos (SWC, lightningcss) instalados no host.
+A aplicação fica disponível em `http://localhost:3002` (porta mapeada em `docker-compose.yml`; ajusta-a se entrar em conflito com outro serviço local). O serviço monta o código-fonte e o `node_modules` do host como volumes, com hot-reload activo; a imagem usa `node:20-slim` para ser compatível com os binários nativos (SWC, lightningcss) instalados no host.
 
 ### Produção (com Nginx)
 
@@ -76,7 +76,7 @@ src/
 └── styles/               design tokens e animações (CSS)
 ```
 
-Todo o conteúdo do site vive em `src/data/` — para actualizar projectos, skills, experiência ou certificações, basta editar os ficheiros correspondentes; não há base de dados nem API.
+Todo o conteúdo do site vive em `src/data/`. Para actualizar projectos, skills, experiência ou certificações, basta editar os ficheiros correspondentes; não há base de dados nem API.
 
 ## Variáveis de ambiente
 

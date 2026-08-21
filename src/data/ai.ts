@@ -49,5 +49,5 @@ export const aiUseCases: AIUseCase[] = [
 export const aiSectionCopy = {
   title: "IA como Ferramenta de Trabalho",
   subtitle: "Não substitui o engenheiro. Torna-o mais rápido e mais preciso.",
-  footnote: "A IA não escreve o software. Ajuda a escrever melhor, mais depressa.",
+  footnote: "A IA não escreve o software. Ajuda a escrever melhor e mais depressa.",
 };

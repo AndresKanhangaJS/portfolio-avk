@@ -1,9 +1,11 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/ui";
 import { cn } from "@/lib/cn";
-import { projectFilters, projects } from "@/data/projects";
+import { featuredProjects, otherProjects, projectFilters } from "@/data/projects";
 import type { Project } from "@/types/portfolio.types";
 import { ProjectCard } from "./ProjectCard";
 
@@ -19,7 +21,7 @@ export function ProjectsSection() {
   const [activeFilter, setActiveFilter] = useState<Filter>("Todos");
 
   const filteredProjects = useMemo(
-    () => projects.filter((project) => matchesFilter(project, activeFilter)),
+    () => featuredProjects.filter((project) => matchesFilter(project, activeFilter)),
     [activeFilter],
   );
 
@@ -60,6 +62,21 @@ export function ProjectsSection() {
           </Reveal>
         ))}
       </div>
+
+      <Reveal delay={0.1}>
+        <div className="mt-10 flex justify-center">
+          <Link
+            href="/projectos"
+            className="group inline-flex items-center gap-2 rounded-lg border border-bg-muted px-5 py-2.5 font-display text-sm font-semibold text-text-primary transition-colors hover:border-accent-cyan hover:text-accent-cyan"
+          >
+            Ver todos os projectos
+            <span className="font-mono text-xs text-text-muted group-hover:text-accent-cyan">
+              (+{otherProjects.length})
+            </span>
+            <ArrowRight size={16} className="transition-transform group-hover:translate-x-0.5" />
+          </Link>
+        </div>
+      </Reveal>
     </section>
   );
 }

@@ -1,4 +1,4 @@
-import { Github, Lock } from "lucide-react";
+import { ExternalLink, Github, Lock } from "lucide-react";
 import { Badge, Card } from "@/components/ui";
 import type { Project } from "@/types/portfolio.types";
 import { getStackColor } from "./stackColors";
@@ -32,13 +32,20 @@ export function ProjectCard({ project }: { project: Project }) {
         ))}
       </div>
 
-      <div className="mt-5 border-t border-bg-muted pt-4">
-        {project.isPrivate ? (
-          <span className="inline-flex items-center gap-1.5 text-xs text-text-muted">
-            <Lock size={13} />
-            Projecto Privado
-          </span>
-        ) : (
+      <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-bg-muted pt-4">
+        {project.demo && (
+          <a
+            href={project.demo}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 text-xs font-medium text-accent-cyan hover:underline"
+          >
+            <ExternalLink size={13} />
+            Ver site
+          </a>
+        )}
+
+        {project.github && (
           <a
             href={project.github}
             target="_blank"
@@ -48,6 +55,13 @@ export function ProjectCard({ project }: { project: Project }) {
             <Github size={13} />
             Ver no GitHub
           </a>
+        )}
+
+        {project.isPrivate && (
+          <span className="inline-flex items-center gap-1.5 text-xs text-text-muted">
+            <Lock size={13} />
+            {project.demo ? "Código privado" : "Projecto Privado"}
+          </span>
         )}
       </div>
     </Card>

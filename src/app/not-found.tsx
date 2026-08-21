@@ -8,11 +8,16 @@ export default function NotFound() {
         Página não encontrada
       </h1>
       <p className="mt-2 max-w-md text-text-muted">
-        A rota que procura não existe. Este portfolio é uma única página.
+        A rota que procura não existe. Volte ao início ou veja todos os projectos.
       </p>
-      <ButtonLink href="/" variant="primary" className="mt-8">
-        Voltar ao início
-      </ButtonLink>
+      <div className="mt-8 flex flex-wrap justify-center gap-3">
+        <ButtonLink href="/" variant="primary">
+          Voltar ao início
+        </ButtonLink>
+        <ButtonLink href="/projectos" variant="outline">
+          Ver projectos
+        </ButtonLink>
+      </div>
     </div>
   );
 }

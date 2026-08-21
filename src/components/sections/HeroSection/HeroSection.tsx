@@ -48,8 +48,8 @@ export function HeroSection() {
           </div>
 
           <p className="mt-6 max-w-xl text-base leading-relaxed text-text-muted sm:text-lg">
-            {personal.location} — sistemas web empresariais e institucionais,
-            do requisito à produção.
+            {personal.location}, com foco em sistemas web empresariais e
+            institucionais, do requisito à produção.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-4">

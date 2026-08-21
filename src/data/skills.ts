@@ -58,6 +58,6 @@ export const learningSkills: LearningSkill[] = [
   { name: "Python (Data Science)" },
   { name: "Power BI" },
   { name: "Cybersecurity" },
-  { name: "LLM Fine-tuning e RAG" },
+  { name: "Integração de IA em aplicações" },
   { name: "Arquitectura de Software" },
 ];

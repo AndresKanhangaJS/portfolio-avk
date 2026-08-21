@@ -40,7 +40,11 @@ export interface Project {
   status: ProjectStatus;
   categories: ProjectCategory[];
   github?: string;
+  /** URL público do site em produção, quando existe (o código pode continuar privado). */
+  demo?: string;
   isPrivate: boolean;
+  /** Destaque: aparece na home. Os restantes só na página /projectos. */
+  featured: boolean;
 }
 
 export interface ExperienceEntry {

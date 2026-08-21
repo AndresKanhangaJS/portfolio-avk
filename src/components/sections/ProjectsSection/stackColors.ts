@@ -6,6 +6,7 @@ const stackColorMap: Record<string, string> = {
   MySQL: "bg-gold/10 text-gold border-gold/30",
   TypeScript: "bg-accent-blue/10 text-accent-blue border-accent-blue/30",
   JavaScript: "bg-gold/10 text-gold border-gold/30",
+  "Inertia.js": "bg-accent-blue/10 text-accent-blue border-accent-blue/30",
   AdonisJS: "bg-accent-blue/10 text-accent-blue border-accent-blue/30",
   Bootstrap: "bg-accent-blue/10 text-accent-blue border-accent-blue/30",
   Livewire: "bg-accent-angola/10 text-accent-angola border-accent-angola/30",

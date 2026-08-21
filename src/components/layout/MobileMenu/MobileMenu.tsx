@@ -1,8 +1,10 @@
 "use client";
 
+import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { X } from "lucide-react";
 import type { NavLink } from "@/types/portfolio.types";
+import { sectionIdFromHref } from "@/constants/navigation";
 import { cn } from "@/lib/cn";
 
 interface MobileMenuProps {
@@ -36,18 +38,18 @@ export function MobileMenu({ isOpen, onClose, links, activeId }: MobileMenuProps
             <ul className="flex flex-col items-center gap-6 py-8">
               {links.map((link) => (
                 <li key={link.href}>
-                  <a
+                  <Link
                     href={link.href}
                     onClick={onClose}
                     className={cn(
                       "font-display text-2xl font-medium transition-colors",
-                      activeId === link.href.slice(1)
+                      activeId === sectionIdFromHref(link.href)
                         ? "text-accent-cyan"
                         : "text-text-primary hover:text-accent-cyan",
                     )}
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

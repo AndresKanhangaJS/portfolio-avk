@@ -24,8 +24,14 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
+/**
+ * URL público do site. Define NEXT_PUBLIC_APP_URL no ambiente (Vercel) —
+ * hoje o domínio .vercel.app, amanhã o domínio próprio, sem tocar no código.
+ */
+const siteUrl = process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://andrekanhanga.dev"),
+  metadataBase: new URL(siteUrl),
   title: "André Vasconcelos Kanhanga | Engenheiro de Software Full-Stack",
   description:
     "Engenheiro de Software Full-Stack com mais de 5 anos de experiência em sistemas web empresariais e institucionais. Baseado em Luanda, Angola.",
@@ -42,7 +48,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "pt_AO",
-    url: "https://andrekanhanga.dev",
+    url: siteUrl,
     siteName: "André Vasconcelos Kanhanga",
     title: "André Vasconcelos Kanhanga | Engenheiro de Software Full-Stack",
     description:

@@ -1,16 +1,70 @@
 import type { Project } from "@/types/portfolio.types";
 
+/**
+ * Os 6 primeiros (featured: true) aparecem na home.
+ * Os restantes só na página /projectos, em formato compacto.
+ */
 export const projects: Project[] = [
   {
-    id: "gestao-academica",
-    title: "Sistema de Gestão Académica",
+    id: "level-school",
+    title: "Level-School",
     stack: ["Laravel", "MySQL", "Bootstrap"],
-    type: "Sistema institucional (ISPAJ)",
+    type: "Produto Level-Soft",
     description:
-      "Sistema completo de gestão académica com módulos de matrículas, notas, horários, relatórios institucionais e facturação integrada (propinas, emissão de recibos e relatórios financeiros em PDF).",
+      "Sistema de gestão académica desenvolvido pela Level-Soft, com módulos de matrículas, notas, horários, relatórios institucionais e facturação integrada (propinas, emissão de recibos e relatórios financeiros em PDF e Excel) - módulo de facturação validado pela AGT. Em produção desde 2022, actualmente em 22 escolas clientes.",
     status: "Em produção",
     categories: ["Sistemas"],
     isPrivate: true,
+    featured: true,
+  },
+  {
+    id: "gestao-rh",
+    title: "Sistema de Gestão de Recursos Humanos",
+    stack: ["Laravel", "Angular", "React", "MySQL"],
+    type: "Produto Level-Soft",
+    description:
+      "Sistema de gestão de RH desenvolvido pela Level-Soft, com módulos de colaboradores, contratos, faltas e presenças, férias e processamento salarial. Existem duas versões, uma em React e outra em Angular, sendo esta última a mais consolidada. Em produção desde 2021, actualmente em 5 clientes.",
+    status: "Em produção",
+    categories: ["Sistemas"],
+    isPrivate: true,
+    featured: true,
+  },
+  {
+    id: "gestao-agrupamento",
+    title: "Sistema de Gestão de Agrupamento",
+    stack: ["Laravel", "React", "Inertia.js", "MySQL"],
+    type: "Sistema full-stack",
+    description:
+      "Plataforma completa para gestão de agrupamentos de escuteiros, com painel administrativo em React integrado com Laravel através do Inertia.js. Gestão de escuteiros, gestão financeira, actividades e um pequeno blog.",
+    status: "Em produção",
+    categories: ["Sistemas", "Web"],
+    isPrivate: true,
+    featured: true,
+  },
+  {
+    id: "gestao-bibliotecaria",
+    title: "Sistema de Gestão Bibliotecária",
+    stack: ["Laravel", "MySQL", "Bootstrap"],
+    type: "Sistema institucional",
+    description:
+      "Software para gerir bibliotecas, com catálogo de livros, registo de leitores, requisições e controlo de devoluções. Desenvolvido em 2019, em produção numa instituição de ensino superior.",
+    status: "Em produção",
+    categories: ["Sistemas", "Pessoal"],
+    isPrivate: true,
+    featured: true,
+  },
+  {
+    id: "kamba-dyami",
+    title: "Kamba-Dyami Cocktail",
+    stack: ["Next.js 15", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    type: "Website / Freelance",
+    description:
+      "Website premium de cocktailaria angolana com design system completo, animações cinematográficas, catálogo interactivo e identidade visual enraizada na cultura de Luanda.",
+    status: "Em produção",
+    categories: ["Web", "Pessoal"],
+    demo: "https://kamba-dyami-cocktail.vercel.app/",
+    isPrivate: true,
+    featured: true,
   },
   {
     id: "gestao-eclesial",
@@ -18,44 +72,14 @@ export const projects: Project[] = [
     stack: ["Laravel", "Livewire", "Filament", "MySQL"],
     type: "Sistema de gestão / comunidade",
     description:
-      "Sistema de gestão eclesial com módulos de membros, departamentos, eventos, contribuições e relatórios. Interface admin construída com Filament, componentes reactivos com Livewire sem necessidade de JavaScript extra.",
-    status: "Em produção",
+      "Sistema para gestão dos fiéis de uma paróquia afecta à Igreja Católica, com gestão de receitas e despesas e um módulo de gestão da catequese. Interface admin construída com Filament, componentes reactivos com Livewire sem necessidade de JavaScript extra.",
+    status: "Em desenvolvimento",
     categories: ["Sistemas", "Web"],
     isPrivate: true,
+    featured: true,
   },
-  {
-    id: "gestao-agrupamento",
-    title: "Sistema de Gestão de Agrupamento",
-    stack: ["Laravel", "React", "MySQL", "REST API"],
-    type: "Sistema full-stack",
-    description:
-      "Plataforma de gestão de agrupamento com painel administrativo em React consumindo API Laravel. Gestão de membros, actividades, relatórios e hierarquias.",
-    status: "Em produção",
-    categories: ["Sistemas", "Web", "API"],
-    isPrivate: true,
-  },
-  {
-    id: "gestao-documental",
-    title: "Sistema de Gestão Documental",
-    stack: ["Laravel", "MySQL", "Angular"],
-    type: "Sistema empresarial",
-    description:
-      "Plataforma de gestão e arquivo de documentos institucionais com controlo de versões e permissões por perfil de utilizador.",
-    status: "Em produção",
-    categories: ["Sistemas", "Web"],
-    isPrivate: true,
-  },
-  {
-    id: "e-learning",
-    title: "Plataforma E-Learning",
-    stack: ["Laravel", "MySQL", "JavaScript"],
-    type: "Aplicação institucional",
-    description:
-      "Plataforma de ensino online com gestão de cursos, conteúdos, avaliações e acompanhamento de progresso.",
-    status: "Em produção",
-    categories: ["Web"],
-    isPrivate: true,
-  },
+
+  // --- Outros projectos: só na página /projectos ---
   {
     id: "api-integracao",
     title: "API REST de Integração de Sistemas",
@@ -66,30 +90,35 @@ export const projects: Project[] = [
     status: "Em produção",
     categories: ["API"],
     isPrivate: true,
+    featured: false,
   },
   {
-    id: "gestao-rh",
-    title: "Sistema de Gestão de Recursos Humanos",
-    stack: ["Laravel", "MySQL", "Bootstrap"],
-    type: "Sistema empresarial",
+    id: "e-learning",
+    title: "Plataforma E-Learning",
+    stack: ["Laravel", "MySQL", "JavaScript"],
+    type: "Aplicação institucional",
     description:
-      "Sistema de gestão de RH com módulos de colaboradores, contratos, faltas e presenças, férias, avaliações de desempenho e processamento salarial.",
-    status: "Em produção",
-    categories: ["Sistemas"],
-    isPrivate: true,
-  },
-  {
-    id: "kamba-dyami",
-    title: "Kamba-Dyami Cocktail",
-    stack: ["Next.js 15", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    type: "Website / Freelance",
-    description:
-      "Website premium de cocktailaria angolana com design system completo, animações cinematográficas, catálogo interactivo e identidade visual enraizada na cultura de Luanda.",
+      "Plataforma de apoio ao ensino a distância com gestão de cursos, conteúdos, avaliações e acompanhamento de progresso.",
     status: "Em desenvolvimento",
-    categories: ["Web", "Pessoal"],
-    github: "https://github.com/AndresKanhangaJS/kamba-dyami-cocktail",
-    isPrivate: false,
+    categories: ["Web"],
+    isPrivate: true,
+    featured: false,
+  },
+  {
+    id: "gestao-documental",
+    title: "Sistema de Gestão Documental",
+    stack: ["Laravel", "MySQL", "Bootstrap"],
+    type: "Produto Level-Soft",
+    description:
+      "Plataforma de gestão e arquivo de documentos institucionais desenvolvida pela Level-Soft, com controlo de versões e permissões por perfil de utilizador.",
+    status: "Em produção",
+    categories: ["Sistemas", "Web"],
+    isPrivate: true,
+    featured: false,
   },
 ];
 
-export const projectFilters = ["Todos", "Sistemas", "Web", "API", "Em Produção", "Pessoal"] as const;
+export const featuredProjects = projects.filter((project) => project.featured);
+export const otherProjects = projects.filter((project) => !project.featured);
+
+export const projectFilters = ["Todos", "Sistemas", "Web", "Em Produção", "Pessoal"] as const;

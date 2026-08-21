@@ -3,17 +3,18 @@
 import { useEffect, useState } from "react";
 
 export function useScrollspy(sectionIds: string[], offset = 120): string {
-  const [activeId, setActiveId] = useState<string>(sectionIds[0] ?? "");
+  const [activeId, setActiveId] = useState<string>("");
 
   useEffect(() => {
     function handleScroll() {
       const scrollPosition = window.scrollY + offset;
 
-      let current = sectionIds[0] ?? "";
-      for (const id of sectionIds) {
+      // Fora da home nenhuma secção existe no DOM: não destacar nada.
+      const presentIds = sectionIds.filter((id) => document.getElementById(id));
+      let current = presentIds[0] ?? "";
+      for (const id of presentIds) {
         const el = document.getElementById(id);
-        if (!el) continue;
-        if (el.offsetTop <= scrollPosition) {
+        if (el && el.offsetTop <= scrollPosition) {
           current = id;
         }
       }
